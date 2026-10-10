@@ -1,0 +1,20 @@
+name: 上游作者：要求下架 / Upstream author: takedown request
+description: 你是上游作者，不希望这里分发你的软件的非官方构建
+title: "[下架] "
+labels: ["takedown"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢告知。我们会在 7 天内删除对应的 Release 并从列表中移除，不需要说明理由。
+        Thanks for letting us know. The build will be removed within 7 days; no reason needed.
+  - type: input
+    id: app
+    attributes:
+      label: 软件 / App
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明（可选）/ Notes (optional)

@@ -1,0 +1,34 @@
+name: 申请收录软件 / Request an app
+description: 推荐一个只有 Apple 芯片版本的开源软件
+title: "[申请] "
+labels: ["request"]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: 上游仓库 / Upstream repository
+      placeholder: https://github.com/owner/project
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: 许可证 / License
+      description: 以上游仓库的 LICENSE 文件为准。没有许可证或许可证不允许再分发的软件无法收录。
+      placeholder: MIT / Apache-2.0 / GPL-3.0 ...
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 确认 / Checks
+      options:
+        - label: 上游没有提供 Intel 或 Universal 版本 / Upstream ships no Intel or Universal build
+          required: true
+        - label: 我看过收录规则 docs/POLICY.md / I have read docs/POLICY.md
+          required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明 / Notes
+      description: 例如为什么需要它，或者你已经知道的构建问题。
